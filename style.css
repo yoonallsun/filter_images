@@ -1,0 +1,164 @@
+/* Reset CSS */
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+img{
+  display:block;
+}
+
+.wrapper{
+  width:100%;
+  height:100vh;
+  background:#a7ddbc;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-wrapper{
+  width:100%;
+  max-width:1200px;
+}
+
+/* Filter Buttons Style */
+.filter-btns{
+  width:100%;
+  display:flex;
+  column-gap:0.25rem;
+}
+
+.filter-btns button{
+  width:16.66%;
+  border-radius: 0;
+  border:1px solid #fff;
+  color:#fff;
+  background:#316764;
+  padding:0.5rem 0;
+}
+
+.filter-btns button:hover,
+.filter-btns button.active{
+  background:#609687;
+}
+
+/* Filter Images Style */
+.filter-images{
+  width:100%;
+  height:auto;
+  display:flex;
+  flex-wrap:wrap;
+}
+
+.filter-image{
+  width:25%;
+  padding:0.25rem;
+  /* animation-name: scale;
+  animation-duration: 0.4s;
+  animation-iteration-count: 1; */
+  animation:scale 0.4s 1;
+}
+
+.filter-image.show{
+  display:block;
+}
+
+.filter-image.hide{
+  display:none;
+}
+
+@keyframes scale {
+  from{transform:scale(0);}
+  to{transform:scale(1);}
+}
+
+.filter-image > span{
+  width:100%;
+  border:1px solid #fff;
+  background:#316764;
+  display:block;
+  padding:.25rem;
+  position:relative;
+}
+
+.filter-image > span:after{
+  content:'';
+  position:absolute;
+  display:block;
+  width:100%;
+  height:100%;
+  left:0;
+  top:0;
+  background:#fff;
+  opacity:0;
+  transition:all 0.4s;
+}
+
+.filter-image:hover > span:after{
+  opacity:0.3;
+}
+
+.filter-image img{
+  width:100%;
+}
+
+/* Light Box Style */
+.light-box{
+  position:fixed;
+  width:50%;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);
+  z-index:2;
+  background:#316764;
+  padding:1rem;
+  border-radius:0.25rem;
+  animation:lb-scale 0.4s 1;
+  display:none;
+}
+
+@keyframes lb-scale {
+  from{transform:translate(-50%, -50%) scale(0);}
+  to{transform:translate(-50%, -50%) scale(1);}
+}
+
+.light-box-text{
+  display:flex;
+  justify-content: space-between;
+  color:#fff;
+  padding-bottom:1rem;
+}
+
+.light-box-text .title{
+  display:flex;
+  column-gap: 0.25rem;
+}
+
+.light-box .light-box-image{
+  border:1px solid #fff;
+  padding:0.25rem;
+  border-radius: 0.25rem;
+}
+
+.light-box .light-box-image img{
+  width:100%;
+  border-radius:0.25rem;
+}
+
+.overlay{
+  width:100%;
+  height:100%;
+  position:fixed;
+  background:#000;
+  left:0;
+  top:0;
+  z-index:1;
+  opacity:0.7;
+  display:none;
+}
+
+.light-box.show, .overlay.show{
+  display:block;
+}

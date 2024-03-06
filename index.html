@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiter Images</title>
+
+  <!-- Rimix Icon CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.1.0/remixicon.min.css" integrity="sha512-i5VzKip7owqOGjb0YTF8MR2J9yBVO3FLHeazKzLp354XYTmKcqEU3UeFYUw82R8tV6JqxeATOfstCfpfPhbyEA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="filter-wrapper">
+      <div class="filter-btns">
+        <button class="active" data-filter="all">All</button>
+        <button data-filter="bag">Bag</button>
+        <button data-filter="shoe">Shoe</button>
+        <button data-filter="watch">Watch</button>
+        <button data-filter="camera">Camera</button>
+        <button data-filter="headphone">Headphone</button>
+      </div>
+
+      <div class="filter-images"></div>
+    </div>
+
+    <div class="light-box">
+      <div class="light-box-text">
+        <span class="title" id="tit">Image Category : <p>Bag</p></span>
+        <i class="ri-close-line"></i>
+      </div>
+      <div class="light-box-image" id="img">
+        <img src="images/bag-1.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
